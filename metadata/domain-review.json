@@ -1,0 +1,73 @@
+{
+  "repo": "onyx-trade-backtest-pipe",
+  "language": "Zig",
+  "category": "Trading systems",
+  "goal": "Design a Zig verification harness for backtest systems, covering format conversion, round-trip fixtures, and failure-oriented tests.",
+  "review_model": {
+    "terms": [
+      "spread pressure",
+      "fill risk",
+      "portfolio drift",
+      "quote width"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "spread pressure",
+      "signal": 70,
+      "slack": 33,
+      "drag": 22,
+      "confidence": 57,
+      "score": 164,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "fill risk",
+      "signal": 51,
+      "slack": 36,
+      "drag": 32,
+      "confidence": 85,
+      "score": 127,
+      "lane": "watch"
+    },
+    {
+      "name": "edge",
+      "focus": "portfolio drift",
+      "signal": 57,
+      "slack": 27,
+      "drag": 18,
+      "confidence": 80,
+      "score": 167,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "quote width",
+      "signal": 81,
+      "slack": 37,
+      "drag": 30,
+      "confidence": 78,
+      "score": 187,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "spread pressure",
+      "signal": 61,
+      "slack": 51,
+      "drag": 18,
+      "confidence": 90,
+      "score": 209,
+      "lane": "ship"
+    }
+  ]
+}

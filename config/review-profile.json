@@ -1,0 +1,29 @@
+{
+  "repo": "onyx-trade-backtest-pipe",
+  "language": "Zig",
+  "category": "Trading systems",
+  "case_count": 5,
+  "score_formula": "signal * 2 + slack + confidence - drag * 3",
+  "lane_thresholds": {
+    "ship": 140,
+    "watch": 105
+  },
+  "read_order": [
+    "README.md",
+    "fixtures/domain_review.csv",
+    "metadata/domain-review.json",
+    "examples/onyx-trade-backtest-walkthrough.md"
+  ],
+  "first_question": "Does spread pressure still dominate the review result?",
+  "second_question": "Is portfolio drift being penalized hard enough before quote width is trusted?",
+  "highest_case": {
+    "name": "stale",
+    "focus": "spread pressure",
+    "score": 209
+  },
+  "lowest_case": {
+    "name": "stress",
+    "focus": "fill risk",
+    "score": 127
+  }
+}
