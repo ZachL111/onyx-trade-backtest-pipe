@@ -1,0 +1,32 @@
+{
+  "index": 182,
+  "phase": 2,
+  "batch": 21,
+  "name": "onyx-trade-backtest-pipe",
+  "planned_name": "onyx-trade-backtest-pipe",
+  "language": "Zig",
+  "category": "Trading systems",
+  "goal": "Design a Zig verification harness for backtest systems, covering format conversion, round-trip fixtures, and failure-oriented tests.",
+  "repository_url": "https://github.com/ZachL111/onyx-trade-backtest-pipe",
+  "verification_command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify.ps1",
+  "model": {
+    "inputs": [
+      "demand",
+      "capacity",
+      "latency",
+      "risk",
+      "weight"
+    ],
+    "threshold": 153,
+    "risk_penalty": 6,
+    "latency_penalty": 3,
+    "weight_bonus": 4,
+    "decision_rule": "accept when score is greater than or equal to threshold, otherwise review"
+  },
+  "quality_gates": [
+    "readme constraint scan",
+    "fixture presence check",
+    "metadata JSON parse",
+    "language verifier"
+  ]
+}
