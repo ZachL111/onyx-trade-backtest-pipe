@@ -1,0 +1,17 @@
+{
+  "repo": "onyx-trade-backtest-pipe",
+  "thresholds": {
+    "signal": 3,
+    "slack": 2,
+    "confidence": 1,
+    "drag": 4,
+    "ship": 202,
+    "watch": 126
+  },
+  "terms": [
+    "spread pressure",
+    "fill risk",
+    "portfolio drift",
+    "quote width"
+  ]
+}
